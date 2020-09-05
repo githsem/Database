@@ -30,8 +30,15 @@ def veri_al3(yayinevi):
     print("Kitaplik Listeleri")
     for i in liste:
         print(i)
+def veri_guncelle(yeni,eski):
+    cursor.execute("UPDATE kitaplik set Yayinevi = ? WHERE Yayinevi = ?",(yeni,eski))
+    con.commit()
+def veri_sil(veri):
+    cursor.execute("DELETE FROM kitaplik WHERE Yazar = ?",(veri,))
+    con.commit()
 
-yayinevi = input("Yayinevini Giriniz : ")
-veri_al3(yayinevi)
+
+veri_sil("Ahmet Umit")
+veri_al()
 
 con.close()
