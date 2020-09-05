@@ -18,7 +18,20 @@ def veri_al():
     print("Kitaplik Listeleri")
     for i in liste:
         print(i)
+def veri_al2():
+    cursor.execute("SELECT Isim,Yazar FROM kitaplik")
+    liste = cursor.fetchall()
+    print("Kitaplik Listeleri")
+    for i in liste:
+        print(i)
+def veri_al3(yayinevi):
+    cursor.execute("SELECT * FROM kitaplik Where Yayinevi = ?",(yayinevi,))
+    liste = cursor.fetchall()
+    print("Kitaplik Listeleri")
+    for i in liste:
+        print(i)
 
-veri_al()
+yayinevi = input("Yayinevini Giriniz : ")
+veri_al3(yayinevi)
 
 con.close()
