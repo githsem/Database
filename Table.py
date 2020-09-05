@@ -9,7 +9,14 @@ def tablo_olustur():
 def veri_ekle():
     cursor.execute("INSERT INTO kitaplik VALUES('Istanbul Hatirasi','Ahmet Umit','Everest',561)")
     con.commit()
+def veri_ekle2(isim,yazar,yayinevi,sayfa_sayisi):
+    cursor.execute("INSERT INTO kitaplik VALUES(?,?,?,?)",(isim,yazar,yayinevi,sayfa_sayisi))
+    con.commit()
 
-tablo_olustur()
-veri_ekle()
+isim = input("Isim :")
+yazar = input("Yazar :")
+yayinevi = input("Yayin Evi :")
+sayfa_sayisi = int(input("Sayfa Sayisi :"))
+veri_ekle2(isim,yazar,yayinevi,sayfa_sayisi)
+
 con.close()
