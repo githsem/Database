@@ -12,11 +12,13 @@ def veri_ekle():
 def veri_ekle2(isim,yazar,yayinevi,sayfa_sayisi):
     cursor.execute("INSERT INTO kitaplik VALUES(?,?,?,?)",(isim,yazar,yayinevi,sayfa_sayisi))
     con.commit()
+def veri_al():
+    cursor.execute("SELECT * FROM kitaplik")
+    liste = cursor.fetchall()
+    print("Kitaplik Listeleri")
+    for i in liste:
+        print(i)
 
-isim = input("Isim :")
-yazar = input("Yazar :")
-yayinevi = input("Yayin Evi :")
-sayfa_sayisi = int(input("Sayfa Sayisi :"))
-veri_ekle2(isim,yazar,yayinevi,sayfa_sayisi)
+veri_al()
 
 con.close()
