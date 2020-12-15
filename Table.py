@@ -11,7 +11,7 @@ def veri_ekle():
     con.commit()
 
 def veri_ekle2(isim,yazar,yayinevi,sayfa_sayisi):
-    cursor.execute("INSERT INTO kitaplik VALUES(?,?,?,?)",(isim,yazar,yayinevi,sayfa_sayisi))
+    cursor.execute("INSERT INTO kitaplik VALUES(?,?,?,?)",(isim, yazar, yayinevi, sayfa_sayisi))
     con.commit()
 
 def veri_al():
@@ -36,7 +36,7 @@ def veri_al3(yayinevi):
         print(i)
 
 def veri_guncelle(yeni,eski):
-    cursor.execute("UPDATE kitaplik set Yayinevi = ? WHERE Yayinevi = ?",(yeni,eski))
+    cursor.execute("UPDATE kitaplik set Yayinevi = ? WHERE Yayinevi = ?",(yeni, eski))
     con.commit()
 
 def veri_sil(veri):
