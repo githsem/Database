@@ -43,7 +43,6 @@ def veri_sil(veri):
     cursor.execute("DELETE FROM kitaplik WHERE Yazar = ?",(veri,))
     con.commit()
 
-
 veri_sil("Tess Gerritsen")
 veri_al()
 
